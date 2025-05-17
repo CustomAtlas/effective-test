@@ -1,3 +1,3 @@
 # effective_test
 
-A new Flutter project.
+Effective test app
