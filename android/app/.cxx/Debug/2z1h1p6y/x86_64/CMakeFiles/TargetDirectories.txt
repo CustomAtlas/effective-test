@@ -1,0 +1,2 @@
+C:/Users/aidar/lift_off/effective_test/android/app/.cxx/Debug/2z1h1p6y/x86_64/CMakeFiles/edit_cache.dir
+C:/Users/aidar/lift_off/effective_test/android/app/.cxx/Debug/2z1h1p6y/x86_64/CMakeFiles/rebuild_cache.dir
