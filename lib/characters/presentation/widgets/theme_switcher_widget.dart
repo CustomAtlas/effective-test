@@ -33,6 +33,7 @@ class _ThemeSwitcherWidgetState extends State<ThemeSwitcherWidget> {
       child: Icon(
         isDarkMode ? Icons.wb_sunny : Icons.dark_mode_rounded,
         color: context.colors.text,
+        size: 24,
       ),
     );
   }

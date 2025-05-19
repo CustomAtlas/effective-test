@@ -1,7 +1,7 @@
 import 'package:bloc_concurrency/bloc_concurrency.dart';
 import 'package:drift/drift.dart';
 import 'package:effective_test/core/data/api.dart';
-import 'package:effective_test/core/data/character_model.dart';
+import 'package:effective_test/characters/data/character_model.dart';
 import 'package:effective_test/core/local_storages/database.dart' as db;
 import 'package:effective_test/core/local_storages/shared_preferences.dart';
 import 'package:equatable/equatable.dart';

@@ -1,5 +1,5 @@
-import 'package:effective_test/characters/characters_bloc/characters_bloc.dart';
-import 'package:effective_test/characters/widgets/character_widget.dart';
+import 'package:effective_test/characters/presentation/characters_bloc/characters_bloc.dart';
+import 'package:effective_test/characters/presentation/widgets/character_widget.dart';
 import 'package:effective_test/core/styles/theme_extensions.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';

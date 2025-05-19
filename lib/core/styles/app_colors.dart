@@ -16,8 +16,5 @@ abstract class AppColors {
   static const Color textSecondaryGrayLight = Color(0xFF756E5C);
 
   // Common
-  static const Color commonElement = Color(0xFF3574F0);
-  static const Color startNameGradient = Color.fromARGB(255, 7, 150, 88);
-  static const Color centerNameGradient = Color(0xFFE70A17);
-  static const Color endNameGradient = Color(0xFF4C3B92);
+  static const Color commonColor = Color.fromARGB(255, 7, 150, 88);
 }

@@ -8,7 +8,7 @@ class SelectedBottomBarItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Icon(icon, color: context.colors.startNameGradient);
+    return Icon(icon, color: context.colors.commonColor);
   }
 }
 

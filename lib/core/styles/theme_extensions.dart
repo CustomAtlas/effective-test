@@ -15,9 +15,5 @@ extension CustomColorScheme on ColorScheme {
   Color get textGray => isDarkTheme() ? AppColors.textGrayDark : AppColors.textGrayLight;
   Color get textSecondaryGray => isDarkTheme() ? AppColors.textSecondaryGrayDark : AppColors.textSecondaryGrayDark;
 
-  Color get commonElement => AppColors.commonElement;
-  Color get startNameGradient => AppColors.startNameGradient;
-  Color get centerNameGradient => AppColors.centerNameGradient;
-  Color get error => AppColors.centerNameGradient;
-  Color get endNameGradient => AppColors.endNameGradient;
+  Color get commonColor => AppColors.commonColor;
 }

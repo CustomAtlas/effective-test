@@ -1,5 +1,5 @@
-import 'package:effective_test/characters/characters_bloc/characters_bloc.dart';
-import 'package:effective_test/characters/widgets/character_widget.dart';
+import 'package:effective_test/characters/presentation/characters_bloc/characters_bloc.dart';
+import 'package:effective_test/characters/presentation/widgets/character_widget.dart';
 import 'package:effective_test/core/styles/theme_extensions.dart';
 import 'package:effective_test/core/utils/show_message.dart';
 import 'package:flutter/gestures.dart';
@@ -32,7 +32,7 @@ class _MainScreenState extends State<MainScreen> {
                     text: "tap on me",
                     style: TextStyle(
                       fontSize: 18,
-                      color: context.colors.startNameGradient,
+                      color: context.colors.commonColor,
                       decoration: TextDecoration.underline,
                     ),
                     recognizer: TapGestureRecognizer()
@@ -62,7 +62,7 @@ class _MainScreenState extends State<MainScreen> {
                 width: 66,
                 child: Center(
                   child: CircularProgressIndicator(
-                    color: context.colors.startNameGradient,
+                    color: context.colors.commonColor,
                   ),
                 ),
               );

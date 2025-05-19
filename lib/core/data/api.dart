@@ -1,5 +1,5 @@
 import 'package:dio/dio.dart';
-import 'package:effective_test/core/data/character_model.dart';
+import 'package:effective_test/characters/data/character_model.dart';
 
 class ApiClient {
   final dio = Dio();

@@ -1,6 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:effective_test/characters/characters_bloc/characters_bloc.dart';
-import 'package:effective_test/core/data/character_model.dart';
+import 'package:effective_test/characters/presentation/characters_bloc/characters_bloc.dart';
+import 'package:effective_test/characters/data/character_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -119,11 +119,7 @@ class _CharacterWidgetState extends State<CharacterWidget> with SingleTickerProv
                                 child: controller.isAnimating ? child : SizedBox.shrink(),
                               );
                             },
-                            child: Icon(
-                              isFavorite ? Icons.star : Icons.star_border,
-                              color: Colors.yellow,
-                              size: 24,
-                            ),
+                            child: _FavIconWidget(isFavorite),
                           ),
                         ),
                         Positioned(
@@ -133,11 +129,7 @@ class _CharacterWidgetState extends State<CharacterWidget> with SingleTickerProv
                             splashColor: Colors.transparent,
                             overlayColor: WidgetStatePropertyAll(Colors.transparent),
                             onTap: () async => await onStarTap(context, isFavorite),
-                            child: Icon(
-                              isFavorite ? Icons.star : Icons.star_border,
-                              color: Colors.yellow,
-                              size: 24,
-                            ),
+                            child: _FavIconWidget(isFavorite),
                           ),
                         ),
                       ],
@@ -168,6 +160,21 @@ class _CharacterWidgetState extends State<CharacterWidget> with SingleTickerProv
           ),
         );
       },
+    );
+  }
+}
+
+class _FavIconWidget extends StatelessWidget {
+  const _FavIconWidget(this.isFavorite);
+
+  final bool isFavorite;
+
+  @override
+  Widget build(BuildContext context) {
+    return Icon(
+      isFavorite ? Icons.star : Icons.star_border,
+      color: Colors.yellow,
+      size: 24,
     );
   }
 }

@@ -1,10 +1,10 @@
-import 'package:effective_test/characters/characters_bloc/characters_bloc.dart';
+import 'package:effective_test/characters/presentation/characters_bloc/characters_bloc.dart';
 import 'package:effective_test/core/data/api.dart';
-import 'package:effective_test/characters/screens/favorite_screen.dart';
-import 'package:effective_test/characters/screens/main_screen.dart';
-import 'package:effective_test/characters/widgets/navigation_bar_widgets.dart';
-import 'package:effective_test/characters/widgets/sort_button_widget.dart';
-import 'package:effective_test/characters/widgets/theme_switcher_widget.dart';
+import 'package:effective_test/characters/presentation/screens/favorite_screen.dart';
+import 'package:effective_test/characters/presentation/screens/main_screen.dart';
+import 'package:effective_test/characters/presentation/widgets/navigation_bar_widgets.dart';
+import 'package:effective_test/characters/presentation/widgets/sort_button_widget.dart';
+import 'package:effective_test/characters/presentation/widgets/theme_switcher_widget.dart';
 import 'package:effective_test/core/local_storages/database.dart';
 import 'package:effective_test/core/local_storages/shared_preferences.dart';
 import 'package:effective_test/core/providers/theme_provider.dart';
