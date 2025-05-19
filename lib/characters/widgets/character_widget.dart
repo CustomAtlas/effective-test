@@ -41,7 +41,7 @@ class _CharacterWidgetState extends State<CharacterWidget> with SingleTickerProv
     ).animate(CurvedAnimation(parent: controller, curve: Curves.easeInOut));
 
     Future.delayed(Duration.zero, () {
-      if (!context.mounted || !mounted) return;
+      if (!mounted || !context.mounted) return;
       final isFavorite =
           context.read<CharactersBloc>().state.favoriteCharacters.where((c) => c.id == widget.character.id).isNotEmpty;
       if (isFavorite) controller.value = 1.0;
@@ -116,7 +116,7 @@ class _CharacterWidgetState extends State<CharacterWidget> with SingleTickerProv
                             builder: (context, child) {
                               return Transform.translate(
                                 offset: offsetAnimation.value,
-                                child: child,
+                                child: controller.isAnimating ? child : SizedBox.shrink(),
                               );
                             },
                             child: Icon(

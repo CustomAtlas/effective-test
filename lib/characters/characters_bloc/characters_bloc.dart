@@ -36,6 +36,7 @@ class CharactersBloc extends Bloc<CharactersEvent, CharactersState> {
   final pageKey = 'page_key';
   bool hasLastLoadFromDB = false;
   bool hasSorted = false;
+  bool hasFirstLoadFromDB = false;
 
   Future<void> _loadCharacters(
     LoadCharactersEvent event,
@@ -57,11 +58,12 @@ class CharactersBloc extends Bloc<CharactersEvent, CharactersState> {
             error: 'Something went wrong. Check your internet connection or try again later',
           ));
         } else {
-          if (hasLastLoadFromDB) {
+          if (hasLastLoadFromDB || hasFirstLoadFromDB) {
             emit(LoadedCharactersState(
               characters: _characters,
               favoriteCharacters: _favoriteCharacters,
             ));
+            hasLastLoadFromDB = true;
             return;
           }
           _characters.addAll(dbCharacters);
@@ -71,17 +73,21 @@ class CharactersBloc extends Bloc<CharactersEvent, CharactersState> {
             favoriteCharacters: _favoriteCharacters,
           ));
           hasLastLoadFromDB = true;
+          hasFirstLoadFromDB = true;
         }
         return;
       }
-      final dbCharacters = (await _database.characters.select().get()).map((e) => Character.fromJson(e.character));
-      if (dbCharacters.isNotEmpty) {
-        _characters.addAll(dbCharacters);
-        _favoriteCharacters.addAll(dbCharacters.where((c) => c.isFavorite));
+      if (!hasFirstLoadFromDB) {
+        final dbCharacters = (await _database.characters.select().get()).map((e) => Character.fromJson(e.character));
+        if (dbCharacters.isNotEmpty) {
+          _characters.addAll(dbCharacters);
+          _favoriteCharacters.addAll(dbCharacters.where((c) => c.isFavorite));
+          hasFirstLoadFromDB = true;
+        }
       }
       hasLastLoadFromDB = false;
-      SharedPrefs.setData(key: pageKey, type: DataType.int, data: page);
       page++;
+      SharedPrefs.setData(key: pageKey, type: DataType.int, data: page);
       _characters.addAll(response);
       emit(LoadedCharactersState(
         characters: _characters,
