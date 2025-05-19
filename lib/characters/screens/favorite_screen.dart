@@ -36,7 +36,7 @@ class _FavoriteScreenState extends State<FavoriteScreen> {
           itemCount: state.favoriteCharacters.length,
           itemBuilder: (context, i) {
             final character = state.favoriteCharacters[i];
-            return CharacterWidget(character);
+            return CharacterWidget(character, index: i, key: ValueKey(character.id));
           },
         );
       },

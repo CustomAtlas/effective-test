@@ -71,7 +71,12 @@ class _MainScreenState extends State<MainScreen> {
               context.read<CharactersBloc>().add(LoadCharactersEvent());
             }
             final character = state.characters[state.isLoading ? i - 1 : i];
-            return CharacterWidget(character);
+            return CharacterWidget(
+              character,
+              isMainScreen: true,
+              index: i,
+              key: ValueKey(character.id),
+            );
           },
         );
       },
